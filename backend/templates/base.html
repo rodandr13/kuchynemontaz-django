@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Montáž a instalace kuchyní v Praze. Rozvody elektřiny a vody.</title>
+</head>
+<body class="root">
+<div class="page">
+  <div class="background-container">
+    <header class="header">
+      {% include "includes/header.html" %}
+    </header>
+  </div>
+  <main class="content">
+    {% block content %}
+
+    {% endblock %}
+  </main>
+  <footer class="footer">
+    {% include "includes/footer.html" %}
+  </footer>
+</div>
+<div class="popup popup_type_image">
+  <div class="popup__image-container">
+    <img class="popup__image" src="" alt="">
+    <button type="button" class="popup__close-button" aria-label="Zavřít"></button>
+  </div>
+</div>
+<div class="popup popup_type_send-request">
+  <div class="popup__container">
+    <h2 class="popup__header">Žádost o cenovou nabídku</h2>
+    <p class="popup__subheader">Zanechte nám na Vás kontakt a náš pracovník se s Vámi spojí kvůli upřesnění podrobností.</p>
+    <form action="#" class="form form_type_send-request popup__form" name="request-form" novalidate>
+      <input
+        type="tel"
+        class="form__input form__input_type_telephone"
+        name="request-tel" placeholder="Telefon"
+        minlength="9"
+        maxlength="12"
+        required
+      >
+      <span class="form__input-error request-tel-error"></span>
+      <input
+        type="text"
+        class="form__input form__input_type_name"
+        name="request-name"
+        placeholder="Jméno"
+        minlength="2"
+        maxlength="24"
+        required
+      >
+      <span class="form__input-error request-name-error"></span>
+      <button type="submit" class="form__button">Odeslat</button>
+    </form>
+    <button type="button" class="popup__close-button" aria-label="Zavřít"></button>
+    <p class="popup__text">Stisknutím tlačítka „Odeslat" souhlasíte s pravidly zpracování osobních údajů.</p>
+  </div>
+</div>
+<script src="./scripts/validation.js"></script>
+<script src="./scripts/index.js"></script>
+</body>
+</html>
